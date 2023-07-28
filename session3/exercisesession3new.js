@@ -170,10 +170,41 @@ console.log(swappedResult);
 a = 50;
 b = 40;
 
-console.log(a > b ? "num1 bigger than num2" : "num1 lower smaller than num2")
+if (a > b) {
+    console.log (`${a} is bigger than ${b}`)
+}else if (a < b){
+    console.log (`${a} is lower than ${b}`)
+}else{
+    console.log (`${a} is equal to ${b}`)
+}
 
 // write a conditional statement to sort three number
+// ver1
+let n1 = 10;
+let n2 = 5;
+let n3 = 8;
 
+if (n1 < n2 && n1 < n3) {
+    if (n2 < n3) {
+        console.log(n1,n2,n3);
+    } else {
+        console.log(n1,n3,n2);
+    }
+} else if (n2 < n1 && n2 < n3) {
+    if (n1 < n3) {
+        console.log(n2,n1,n3);
+    } else {
+        console.log(n2,n3,n1);
+    }
+} else {
+    if (n1 < n2) {
+        console.log(n3,n1,n2);
+    } else {
+        console.log(n3,n2,n1);
+    }
+}
+
+// ver2 
 let num1 = 10;
 let num2 = 5;
 let num3 = 8;
@@ -200,7 +231,6 @@ if (num1 > num2) {
 }
 
 console.log(num1, num2, num3);
-
 // write a code that shows 1 if the input a string, 2 if the input is a number, and 3 for other data type
 
 const var1 = 2
@@ -214,7 +244,7 @@ if (typeof var1 === "string") {
 
 
 // write a code to change every letter a into * from a string of input
-
+// using for loop
 const sentences = "An apple a day keeps the doctor away"
 let sentences2 = ""
 
@@ -227,3 +257,8 @@ for (let i = 0; i < sentences.length; i++) {
     }
 }
 console.log(sentences2)
+
+// using builtin string method
+const kalimat = "An apple a day keeps the doctor away";
+const replacedText = kalimat.replaceAll("a","*").replaceAll("A","*");
+console.log(replacedText)
