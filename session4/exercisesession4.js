@@ -13,7 +13,7 @@ function triangle(height) {
 
 triangle(5);
 
-// create triangle with output 01, 02 03,04 05 06,07 08 09 10
+// create triangle with output 01,02 03,04 05 06,07 08 09 10
 function triangle2(height2) {
     let output = '';
     let currentNumber = 1;
