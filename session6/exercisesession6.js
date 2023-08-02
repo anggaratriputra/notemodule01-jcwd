@@ -93,7 +93,7 @@ class Transaction {
         if (!(product instanceof Product)) {
             return;
         }
-        
+
         this.#cart.push({
             product: product,
             qty: qty
@@ -102,6 +102,22 @@ class Transaction {
 
     getCart() {
         return this.#cart
+    }
+    
+    calculateTotal() {
+        this.total = 0;
+        for (const item of this.#cart) {
+            this.total += item.product.price * item.qty;
+        }
+    }
+
+    checkout() {
+        this.calculateTotal();
+        return {
+            transactionData: this.#cart,
+            total: this.total,
+        };
+
     }
 }
 const product1 = new Product("shampoo", 5000);
@@ -121,4 +137,13 @@ t2.addToCart(product1, 2)
 t2.addToCart(product3, 1)
 t2.addToCart(product5, 10)
 
-console.log(t1.getCart());
+console.log("Cart 1 :", t1.getCart());
+console.log("Cart 1 :", t2.getCart());
+
+const t1Data = t1.checkout();
+console.log("Transaction 1 Total:", t1Data.total);
+console.log("Transaction 1 Data:", t1Data.transactionData);
+
+const t2Data = t2.checkout();
+console.log("Transaction 2 Total:", t2Data.total);
+console.log("Transaction 2 Data:", t2Data.transactionData);
