@@ -1,0 +1,32 @@
+<h1 id="convertRupiah">10000000</h1>
+<h1>change</h1>
+<h1>change</h1>
+<h1>change</h1>
+<h1>change</h1>
+<h1>change</h1>
+<h1>change</h1>
+<h1>change</h1>
+
+<script>
+    // let convertRupiah = document.getElementById("convertRupiah");
+    // convertNumber = Number(convertRupiah.innerHTML)
+    // convertedRupiah = convertNumber.toLocaleString("id-ID");
+    // convertRupiah.textContent = "Rp. " + convertedRupiah + ",00"
+    
+
+    const target = document.getElementById("convertRupiah");
+    const format = Intl.NumberFormat("ID-id").format
+    const money = target.innerHTML;
+    const formatted = format(money);
+    target.innerHTML = formatted;
+  
+    const h1Elements = document.getElementsByTagName("h1");
+    // for (let i = 0; i < h1Elements.length; i++) {
+    //     h1Elements[i].innerHTML = formatted;
+    for (let item of h1Elements){
+        item.innerHTML = formatted;
+    }
+    
+
+
+</script>
