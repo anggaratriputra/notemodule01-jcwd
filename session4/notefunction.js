@@ -170,3 +170,6 @@ console.log(sq(5))
 console.log(sqr(5)) 
 
 
+
+
+
